@@ -11,13 +11,12 @@ let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 ```
 
 ## Step 2 
-Second process
-Code your micro:bit to take a sound reading when ``||input: button A||`` is pressed.
+Code your micro:bit to take a sound reading when ``||input: button A||`` is pressed. Set the ``||neopixel: brightness||`` of the strip to 50, so the lights are not extremely bright.
 
 ```blocks
 let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 input.onButtonPressed(Button.A, function () {
-    
+    strip.setBrightness(50)
 })
 ```
 
@@ -28,10 +27,12 @@ is ``||logic: less than||`` 750.
 ```blocks
 let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 input.onButtonPressed(Button.A, function () {
-    strip.clear()
-    if (gatorMicrophone.getSoundIntensity() < 350) {
-        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-    }    
+        strip.setBrightness(50)
+        if (gatorMicrophone.getSoundIntensity() < 750) {
+            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        } else {
+            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+        }
 })
 ```
 
@@ -44,12 +45,12 @@ is ``||logic: greater than||`` 750 decibles.
 let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 
 input.onButtonPressed(Button.A, function () {
-    strip.clear()
-    if (gatorMicrophone.getSoundIntensity() < 350) {
-        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-    }  else {
-        strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-    }
+        strip.setBrightness(50)
+        if (gatorMicrophone.getSoundIntensity() < 750) {
+            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        } else {
+            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+        }
 })
 ```
 ## Step 5
@@ -69,42 +70,44 @@ input.onButtonPressed(Button.B, function () {
 ```
 
 ## Step 7
-``|Download your code|`` and try it out
+``|Download|`` your code and try it out
 
 ## Step 8
-Modify either the lights or music to repeat 5 times
+Modify either the lights or music to ``||Loops: repeat||`` 5 times
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
+    input.onButtonPressed(Button.A, function () {
     for (let i = 0; i < 5; i++) {
-        let strip: neopixel.Strip = null
+        strip.setBrightness(50)
         if (gatorMicrophone.getSoundIntensity() < 750) {
             strip.showColor(neopixel.colors(NeoPixelColors.Blue))
         } else {
             strip.showColor(neopixel.colors(NeoPixelColors.Orange))
         }
-        
     }
+})
 })
 ```
 
 ## Step 9
-Pause 10 seconds in between each time the sensor takes a reading
+``||basic: wait|| 10 seconds in between each time the sensor takes a reading
 ```blocks
 input.onButtonPressed(Button.A, function () {
     for (let i = 0; i < 5; i++) {
-        let strip: neopixel.Strip = null
+        strip.setBrightness(50)
         if (gatorMicrophone.getSoundIntensity() < 750) {
             strip.showColor(neopixel.colors(NeoPixelColors.Blue))
         } else {
             strip.showColor(neopixel.colors(NeoPixelColors.Orange))
         }
+        basic.pause(10000)
     }
-    basic.pause(10000)
+})
 })
 ```
 ## Step 10
-``||Download||`` the code and try it out.
+``|Download|`` the code and try it out.
 
 
 ```package
