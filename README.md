@@ -91,7 +91,7 @@ input.onButtonPressed(Button.A, function () {
 ```
 
 ## Step 9
-``||basic: wait|| 10 seconds in between each time the sensor takes a reading
+``||basic: wait||`` 10 seconds in between each time the sensor takes a reading
 ```blocks
 input.onButtonPressed(Button.A, function () {
     for (let i = 0; i < 5; i++) {
