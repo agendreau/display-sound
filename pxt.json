@@ -5,7 +5,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "gatorMicrophone": "github:sparkfun/pxt-gator-microphone#v1.0.20"
+        "gatorMicrophone": "github:sparkfun/pxt-gator-microphone#v1.0.20",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.6.12"
     },
     "files": [
         "README.md",
