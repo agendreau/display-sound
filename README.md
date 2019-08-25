@@ -1,12 +1,7 @@
 # Sound Sensor Data Display
 
 ## Introduction
-When you press ``||input: button A||``, turn on a ``||Neopixel: blue lights||`` 
-``||logic: if||`` the ``||gatorMicrophone: sound||`` is ``||logic: less||`` 
-than 750  and ``||Neopixel: orange lights||`` 
-if the ``||gatorMicrophone: sound||`` is ``||logic: more than||`` 750. 
-Things to think about. Which pin controls the Lights on the gator:bit? 
-How mand LEDs are on the gator:bit? Draw a picture to help think about the logic.
+When you press ``||input: button A||``, turn on ``||Neopixel: blue lights||`` ``||logic: if||`` the ``||gatorMicrophone: sound||`` is ``||logic: less||`` than 750  and ``||Neopixel: orange lights||`` if the ``||gatorMicrophone: sound||`` is ``||logic: more than||`` 750. Things to think about. Which pin controls the Lights on the gator:bit? How mand LEDs are on the gator:bit? Draw a picture to help think about the logic.
 
 ## Step 1
 ``||basic: Initialize||`` the LEDs to that ``||variables: strip||`` can control them.
