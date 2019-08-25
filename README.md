@@ -64,6 +64,7 @@ input.onButtonPressed(Button.A, function () {
 Modify the program so that when you press ``||input: button B||``, 
 if the ``||gatorSound: sound||`` is less than 400, 
 the gator:bit ``||music: plays a song||``. 
+
 ```blocks
 input.onButtonPressed(Button.B, function () {
     if (gatorMicrophone.getSoundIntensity() <400) {
