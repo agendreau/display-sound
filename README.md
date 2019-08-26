@@ -77,7 +77,6 @@ Modify either the lights or music to ``||Loops: repeat||`` 5 times
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
-    input.onButtonPressed(Button.A, function () {
     for (let i = 0; i < 5; i++) {
         strip.setBrightness(50)
         if (gatorMicrophone.getSoundIntensity() < 750) {
@@ -86,7 +85,6 @@ input.onButtonPressed(Button.A, function () {
             strip.showColor(neopixel.colors(NeoPixelColors.Orange))
         }
     }
-})
 })
 ```
 
@@ -103,7 +101,6 @@ input.onButtonPressed(Button.A, function () {
         }
         basic.pause(10000)
     }
-})
 })
 ```
 ## Step 10
