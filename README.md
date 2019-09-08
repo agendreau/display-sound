@@ -13,7 +13,7 @@ input.onButtonPressed(Button.A, function () {
 ```
 
 ## Step 3
-Now code your micro:bit to display ``||basic: a smiley face||`` when  ``||gatorSound: sound intensity||`` 
+Now code your micro:bit to display ``||basic: a smiley face||`` ``||logic: if||`` the  ``||gatorSound: sound intensity||`` 
 is ``||logic: less than||`` 750.
 
 ```blocks
@@ -32,7 +32,7 @@ input.onButtonPressed(Button.A, function () {
 ```
 
 ## Step 4
-Now code your micro:bit to display ``||basic: X||`` when  ``||gatorSound: sound intensity||`` 
+Now code your micro:bit to display ``||basic: X||`` if the  ``||gatorSound: sound intensity||`` 
 is ``||logic: greater than||`` 750. 
 
 
@@ -57,9 +57,7 @@ input.onButtonPressed(Button.A, function () {
 ``|Download your code|`` and try it out
 
 ## Step 6
-Modify the program so that when you press ``||input: button B||``, 
-if the ``||gatorSound: sound||`` is less than 400, 
-the gator:bit ``||music: plays a song||``. 
+Modify the program so that when you press ``||input: button B||``, ``||logic: if||`` the ``||gatorSound: sound||`` is ``||logic: less than||`` 400, the gator:bit ``||music: plays a song||``. 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
