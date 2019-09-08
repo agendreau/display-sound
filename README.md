@@ -3,9 +3,6 @@
 ## Introduction
 When you press ``||input: button A||``, ``||logic: if||`` the ``||gatorMicrophone: sound||`` is ``||logic: less||`` than 750 then show a smiley face ``||logic: else||`` show an X if the ``||gatorMicrophone: sound||`` is ``||logic: more than||`` 750. Things to think about. Draw a picture to help think about what you want to happen. When you're ready click the NEXT button to get started.
 
-## Step 1
-
-
 ## Step 2 
 Use ``||input: button A||`` to ``||basic: show||`` the ``||gatorSound: sound intensity||``
 
@@ -20,7 +17,6 @@ Now code your micro:bit to display ``||basic: a smiley face||`` when  ``||gatorS
 is ``||logic: less than||`` 750.
 
 ```blocks
-let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 input.onButtonPressed(Button.A, function () {
     basic.showNumber(gatorMicrophone.getSoundIntensity())
     if (gatorMicrophone.getSoundIntensity() < 750) {
@@ -69,6 +65,7 @@ the gator:bit ``||music: plays a song||``.
 input.onButtonPressed(Button.B, function () {
     if (gatorMicrophone.getSoundIntensity() <400) {
         music.beginMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once)
+        basic.showString("Music")
     }
 })
 ```
