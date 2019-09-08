@@ -1,57 +1,61 @@
 # Sound Sensor Data Display
 
 ## Introduction
-When you press ``||input: button A||``, turn on ``||Neopixel: blue lights||`` ``||logic: if||`` the ``||gatorMicrophone: sound||`` is ``||logic: less||`` than 750  and ``||Neopixel: orange lights||`` if the ``||gatorMicrophone: sound||`` is ``||logic: more than||`` 750. Things to think about. Which pin controls the Lights on the gator:bit? How mand LEDs are on the gator:bit? Draw a picture to help think about the logic.
+When you press ``||input: button A||``, ``||logic: if||`` the ``||gatorMicrophone: sound||`` is ``||logic: less||`` than 750 then show a smiley face ``||logic: else||`` show an X if the ``||gatorMicrophone: sound||`` is ``||logic: more than||`` 750. Things to think about. Draw a picture to help think about what you want to happen. When you're ready click the NEXT button to get started.
 
 ## Step 1
-``||basic: Initialize||`` the LEDs to that ``||variables: strip||`` can control them.
 
-```blocks
-let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
-```
 
 ## Step 2 
-Code your micro:bit to take a sound reading when ``||input: button A||`` is pressed. Set the ``||neopixel: brightness||`` of the strip to 50, so the lights are not extremely bright.
+Use ``||input: button A||`` to ``||basic: show||`` the ``||gatorSound: sound intensity||``
 
 ```blocks
-let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 input.onButtonPressed(Button.A, function () {
-    strip.setBrightness(50)
+    basic.showNumber(gatorMicrophone.getSoundIntensity())
 })
 ```
 
 ## Step 3
-Now code your micro:bit to display ``||Neopixel: blue lights||`` when  ``||gatorSound: sound intensity||`` 
+Now code your micro:bit to display ``||basic: a smiley face||`` when  ``||gatorSound: sound intensity||`` 
 is ``||logic: less than||`` 750.
 
 ```blocks
 let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
 input.onButtonPressed(Button.A, function () {
-        strip.setBrightness(50)
-        if (gatorMicrophone.getSoundIntensity() < 750) {
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-        } else {
-            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-        }
+    basic.showNumber(gatorMicrophone.getSoundIntensity())
+    if (gatorMicrophone.getSoundIntensity() < 750) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
+            `)
+    }
 })
 ```
 
 ## Step 4
-Now code your micro:bit to display ``||Neopixel: orange lights||`` when  ``||gatorSound: sound intensity||`` 
-is ``||logic: greater than||`` 750 decibles.  
+Now code your micro:bit to display ``||basic: X||`` when  ``||gatorSound: sound intensity||`` 
+is ``||logic: greater than||`` 750. 
 
 
 ```blocks
-let strip = neopixel.create(DigitalPin.P12, 5, NeoPixelMode.RGB)
-
 input.onButtonPressed(Button.A, function () {
-        strip.setBrightness(50)
-        if (gatorMicrophone.getSoundIntensity() < 750) {
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-        } else {
-            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-        }
+    basic.showNumber(gatorMicrophone.getSoundIntensity())
+    if (gatorMicrophone.getSoundIntensity() < 750) {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
+            `)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
 })
+
 ```
 ## Step 5
 ``|Download your code|`` and try it out
@@ -78,13 +82,20 @@ Modify either the lights or music to ``||Loops: repeat||`` 5 times
 ```blocks
 input.onButtonPressed(Button.A, function () {
     for (let i = 0; i < 5; i++) {
-        strip.setBrightness(50)
+        basic.showNumber(gatorMicrophone.getSoundIntensity())
         if (gatorMicrophone.getSoundIntensity() < 750) {
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+            basic.showLeds(`
+                . . . . .
+                . # . # .
+                . . . . .
+                # . . . #
+                . # # # .
+                `)
         } else {
-            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+            basic.showIcon(IconNames.No)
         }
     }
+}) }
 })
 ```
 
@@ -93,11 +104,17 @@ input.onButtonPressed(Button.A, function () {
 ```blocks
 input.onButtonPressed(Button.A, function () {
     for (let i = 0; i < 5; i++) {
-        strip.setBrightness(50)
+        basic.showNumber(gatorMicrophone.getSoundIntensity())
         if (gatorMicrophone.getSoundIntensity() < 750) {
-            strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+            basic.showLeds(`
+                . . . . .
+                . # . # .
+                . . . . .
+                # . . . #
+                . # # # .
+                `)
         } else {
-            strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+            basic.showIcon(IconNames.No)
         }
         basic.pause(10000)
     }
